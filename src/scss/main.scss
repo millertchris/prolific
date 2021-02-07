@@ -254,14 +254,6 @@ p {
 		height: 120px;
 		margin-left: 0;
 	}
-	input[type="checkbox"] {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		white-space: nowrap;
-		width: 1px;
-	}
 	.circle {
 		display: flex;
 		justify-content: center;
@@ -300,7 +292,7 @@ p {
 		justify-content: center;
 		align-items: center;
 		min-height: calc(var(--vh, 1vh) * 90);
-		transition: min-height 300ms ease-in-out;
+		transition: min-height 100ms ease-in-out;
 	}
 	.col {
 		max-width: 600px;
@@ -343,6 +335,13 @@ p {
 	height: 1rem;
 	border: 1px solid #fff;
 	background-color: #fff;
+}
+
+#party {
+	.col {
+		width: 100%;
+		max-width: 450px;
+	}
 }
 
 form {
