@@ -43,7 +43,7 @@
 // Light Mode
 [data-theme="light"] {
 	.light-switch {
-		height: 400px;
+		height: 200px;
 		border-left: 4px dotted #000;
 	}
 	.fa-cloud-moon {
@@ -185,9 +185,6 @@ p {
 #thoughtful {
 	background: var(--bg-color);
 	transition: 300ms all ease-in-out;
-	* {
-		transition: 300ms all ease-in-out;
-	}
 	&:before {
 		height: 95%;
 		bottom: 0;
@@ -198,6 +195,8 @@ p {
 		color: var(--primary-color);
 	}
 	p {
+		text-align: center;
+		margin-top: 0;
 		color: #000;
 	}
 }
@@ -217,7 +216,8 @@ p {
 		left: 0;
 		right: 0;
 		width: 98%;
-		height: 100vh;
+		height: 90vh;
+		height: calc(var(--vh, 1vh) * 90);
 		margin: auto;
 		border: 4px solid #fff;
 		z-index: 10;
@@ -241,15 +241,21 @@ p {
 
 .light-switch {
 	position: absolute;
-	top: 25px;
+	top: 35px;
 	left: 50%;
 	margin-left: 250px;
 	width: 4px;
 	height: 280px;
 	color: var(--primary-color);
+	transition: 900ms height cubic-bezier(0.75, -0.5, 0, 1.75);
 	@media screen and (max-width: 720px) {
 		height: 120px;
 		margin-left: 0;
+	}
+	input[type="checkbox"] {
+		width: 0;
+		height: 0;
+		opacity: 0;
 	}
 	.circle {
 		display: flex;
@@ -265,9 +271,15 @@ p {
 		color: var(--primary-color);
 		background: var(--primary-color);
 		cursor: pointer;
+		transition: 300ms all ease-in-out;
 		label {
 			cursor: pointer;
 		}
+	}
+	.theme-switch {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	i {
 		font-size: 1.5em;
@@ -282,7 +294,7 @@ p {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 90);
 	}
 	.col {
 		max-width: 600px;
@@ -335,7 +347,7 @@ form {
 }
 
 .title {
-	transition: 300ms all ease-in-out;
+	text-align: center;
 }
 
 #result {
