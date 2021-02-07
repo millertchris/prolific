@@ -63,6 +63,8 @@ export default function formSubmit() {
 				"<h2>Yea!!! Now we're talkin!</h2><p>We will review your message and be in touch soon.</p>";
 
 			return true;
+		} else if (email == "") {
+			result.innerHTML = "<p>Look like you forgot your email!</p>";
 		} else {
 			result.innerHTML =
 				'<p>Hmm...something is off. Try checking "' +
