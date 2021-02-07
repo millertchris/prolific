@@ -7,11 +7,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 @mixin visually-hidden() {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
 	position: absolute;
-	right: 999999999px;
-	width: 0;
-	height: 0;
-	opacity: 0;
+	white-space: nowrap;
+	width: 1px;
 }
 
 @mixin fullscreen() {
@@ -43,7 +45,7 @@
 // Light Mode
 [data-theme="light"] {
 	.light-switch {
-		height: 200px;
+		height: 180px;
 		border-left: 4px dotted #000;
 	}
 	.fa-cloud-moon {
@@ -166,7 +168,7 @@ p {
 }
 
 #intro {
-	.title {
+	h1 {
 		@media screen and (max-width: 480px) {
 			font-size: 2em;
 		}
@@ -253,9 +255,12 @@ p {
 		margin-left: 0;
 	}
 	input[type="checkbox"] {
-		width: 0;
-		height: 0;
-		opacity: 0;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		white-space: nowrap;
+		width: 1px;
 	}
 	.circle {
 		display: flex;
@@ -295,6 +300,7 @@ p {
 		justify-content: center;
 		align-items: center;
 		min-height: calc(var(--vh, 1vh) * 90);
+		transition: min-height 300ms ease-in-out;
 	}
 	.col {
 		max-width: 600px;
