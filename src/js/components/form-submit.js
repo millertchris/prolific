@@ -1,28 +1,22 @@
-import * as confetti from 'canvas-confetti';
+import * as confetti from "canvas-confetti";
 
 export default function formSubmit() {
 	var email = document.querySelector('input[type="email"]');
 
 	// Play Lottie
 	function playAnimation() {
-		const player = document.querySelector('.rocket');
+		const player = document.querySelector(".rocket");
 		player.play();
 	}
 
 	// Confetti
-	var canvas = document.getElementById('confetti');
+	var canvas = document.getElementById("confetti");
 	canvas.confetti =
 		canvas.confetti || confetti.create(canvas, { resize: true });
 
 	function makeItFly() {
 		var end = Date.now() + 15 * 1000;
-		var colors = [
-			'#00FFC0',
-			'#F9FF00',
-			'#FF0000',
-			'#FFF',
-			'#FF0000',
-		];
+		var colors = ["#00FFC0", "#F9FF00", "#FF0000", "#FFF", "#FF0000"];
 		(function frame() {
 			canvas.confetti({
 				particleCount: 2,
@@ -55,15 +49,14 @@ export default function formSubmit() {
 	}
 
 	function validate() {
-		const result = document.getElementById('result');
+		const result = document.getElementById("result");
 		var email = document.querySelector('input[type="email"]').value;
-		result.innerHTML = '';
+		result.innerHTML = "";
 
 		if (validateEmail(email)) {
-			var element = document.getElementById('party');
-			element.classList.add('success');
+			var element = document.getElementById("party");
+			element.classList.add("success");
 
-			playAnimation();
 			makeItFly();
 
 			result.innerHTML =
@@ -79,6 +72,6 @@ export default function formSubmit() {
 		return false;
 	}
 
-	const tada = document.getElementById('tada');
-	tada.addEventListener('click', validate);
+	const tada = document.getElementById("tada");
+	tada.addEventListener("click", validate);
 }

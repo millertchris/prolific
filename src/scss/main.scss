@@ -4,7 +4,7 @@
 // @import './components/base';
 // @import './pages/base';
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 @mixin visually-hidden() {
 	position: absolute;
@@ -41,7 +41,7 @@
 }
 
 // Light Mode
-[data-theme='light'] {
+[data-theme="light"] {
 	.light-switch {
 		height: 400px;
 		border-left: 4px dotted #000;
@@ -56,7 +56,7 @@
 }
 
 // Dark Mode
-[data-theme='dark'] {
+[data-theme="dark"] {
 	--primary-color: #fff;
 	--secondary-color: #ddd;
 	--font-color: #fff;
@@ -85,7 +85,7 @@ html,
 body,
 input,
 textarea {
-	font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -130,7 +130,7 @@ textarea {
 
 .btn,
 button,
-input[type='submit'] {
+input[type="submit"] {
 	&:hover {
 		background: #fff;
 		color: #000;
@@ -211,7 +211,7 @@ p {
 	margin-bottom: 60px;
 	overflow: hidden;
 	&:before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -327,34 +327,11 @@ p {
 	background-color: #fff;
 }
 
-#party {
-	&:after {
-		content: '';
-		position: absolute;
-		top: 4px;
-		left: 0;
-		width: 50%;
-		height: 160px;
-		background: #000;
-		z-index: 10;
-		margin: auto;
-		right: 0;
-	}
-}
-
 form {
 	position: relative;
 	opacity: 1;
 	z-index: 1;
 	transition: 300ms all ease-in-out;
-}
-
-.rocket {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	z-index: 0;
 }
 
 .title {
