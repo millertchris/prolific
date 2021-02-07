@@ -120,6 +120,7 @@ textarea {
 			16 0,
 		auto;
 	transition: 300ms all ease-in-out;
+	-webkit-appearance: none;
 	&::placeholder {
 		color: #fff;
 	}
