@@ -1,0 +1,11 @@
+// General
+.front-end .wp-block-group {
+    overflow: hidden;
+}
+
+// Columns
+.wp-block-column {
+    @media (min-width: 600px) {
+        flex-wrap: nowrap;
+    }
+}

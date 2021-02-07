@@ -1,0 +1,58 @@
+#app {
+}
+
+.component.panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 220px;
+	height: 100vh;
+	padding: 20px;
+	background: $light-gray;
+	.option {
+		display: flex;
+		align-items: center;
+		input {
+			margin-left: 10px;
+		}
+	}
+}
+
+.block.colors {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		@include clear-list();
+	}
+	.color {
+		position: relative;
+	}
+	.primary {
+		@include display-value($primary);
+	}
+	.secondary {
+		@include display-value($secondary);
+	}
+	.tertiary {
+		@include display-value($tertiary);
+	}
+	.light-gray {
+		@include display-value($light-gray);
+	}
+	.medium-gray {
+		@include display-value($medium-gray);
+	}
+	.dark-gray {
+		@include display-value($dark-gray);
+	}
+}
+
+.block {
+	.label {
+		font-size: 16px;
+		color: $medium-gray;
+		&.hide {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+// Global Button Styles
+button {
+	cursor: pointer;
+}
+
+$color1: #000;
+
+.buttons {
+	margin-top: 30px;
+}
+
+#{$all-buttons} {
+	color: #fff;
+	// background-color: #000;
+	text-decoration: none;
+
+	position: relative;
+	// padding: 1em 1.5em;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+	// font-size: 18px;
+	// margin: 1em 0.8em;
+
+	transition: 300ms all ease-in-out;
+
+	&.type1 {
+		color: var(--action-color);
+	}
+
+	// Effect one
+	&.type1::after,
+	&.type1::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 20%;
+		height: 20%;
+		border: 2px solid;
+		transition: all 0.6s ease;
+		border-radius: 0px;
+	}
+
+	&.type1::after {
+		bottom: 0;
+		right: 0;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: var(--action-color);
+		border-right-color: var(--action-color);
+	}
+
+	&.type1::before {
+		top: 0;
+		left: 0;
+		border-bottom-color: transparent;
+		border-right-color: transparent;
+		border-top-color: var(--action-color);
+		border-left-color: var(--action-color);
+	}
+
+	&.type1:hover:after,
+	&.type1:hover:before,
+	&.type1:focus:after,
+	&.type1:focus:before {
+		width: 100%;
+		height: 100%;
+	}
+	&:active {
+		color: #fff;
+		background: #000;
+	}
+	&:focus {
+		outline: $focus-outline;
+		outline-offset: $focus-outline-offset;
+	}
+}

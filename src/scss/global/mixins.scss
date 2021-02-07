@@ -1,0 +1,231 @@
+// Breakpoints
+@mixin mobile-only {
+	@media (max-width: 599px) {
+		@content;
+	}
+}
+@mixin tablet-portrait-up {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+@mixin tablet-landscape-up {
+	@media (min-width: 900px) {
+		@content;
+	}
+}
+@mixin desktop-up {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin big-desktop-up {
+	@media (min-width: 1800px) {
+		@content;
+	}
+}
+
+@mixin visually-hidden() {
+	position: absolute;
+	right: 999999999px;
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+
+// Styleguide
+@mixin heading-style($heading-font-size, $heading-line-height) {
+	font-size: $heading-font-size;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	line-height: $heading-line-height;
+}
+
+// Utility
+@mixin link-style() {
+	font-family: $base-font-family;
+	letter-spacing: 0.155em;
+	text-transform: uppercase;
+}
+
+@mixin image-cover() {
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	img {
+		display: none;
+	}
+}
+
+@mixin img-cover() {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@mixin clear-list() {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin clear-btn() {
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	width: auto;
+	height: auto;
+	padding: 0;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	background: transparent;
+	border: none;
+	color: $base-font-color;
+	transform: translate(0);
+	text-transform: none;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	&:before,
+	&:after {
+		content: none;
+	}
+}
+
+@mixin aspect-ratio($width, $height) {
+	// https://css-tricks.com/aspect-ratio-boxes/
+	// calc(591.44 / 1127.34 * 100%);
+	height: 0;
+	padding-top: $height / $width * 100%;
+}
+
+@mixin flex($justify: center, $align: center, $dir: row, $wrap: wrap) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: $wrap;
+}
+
+@mixin display-value($var) {
+	&:after {
+		content: "";
+		position: relative;
+		display: block;
+		width: 200px;
+		height: 200px;
+		background-color: $var;
+	}
+}
+
+// Button base
+@mixin btn-base() {
+	position: relative;
+	display: inline-block;
+	padding: 3px 8px 3px 0;
+	font-family: $base-font-family;
+	font-size: $mobile-font-size;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 600;
+	line-height: 1.4;
+	text-decoration: underline;
+	color: $btn-text-color;
+	background-color: $btn-bg-color;
+	border: none;
+	border-radius: $btn-border-radius;
+	transition: all $base-duration $base-timing;
+	user-select: none;
+	vertical-align: middle;
+	appearance: none;
+	box-sizing: content-box;
+	cursor: pointer;
+
+	@include tablet-portrait-up {
+		font-size: $tablet-font-size; // tablet font size
+	}
+	@include tablet-landscape-up {
+		font-size: $desktop-font-size; // desktop font size
+	}
+	@include desktop-up {
+		font-size: $base-font-size; // base or large font size
+	}
+
+	&:not(.prev):before {
+		content: "";
+		display: inline-block;
+		width: calc(100% - 38px);
+		height: 100%;
+		background-color: $black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0;
+		transition: all $base-duration $base-timing;
+	}
+
+	&:not(.prev):after {
+		content: "";
+		display: inline-block;
+		width: 28px;
+		height: 15px;
+		margin-left: 10px;
+		background-repeat: no-repeat;
+		background-position: center;
+		transition: all $base-duration $base-timing;
+		transform: translateX(0);
+	}
+	&.prev {
+		&:after {
+			content: "";
+			display: inline-block;
+			width: calc(100% - 38px);
+			height: 100%;
+			background-color: $black;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: -1;
+			opacity: 0;
+			transition: all $base-duration $base-timing;
+		}
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 28px;
+			height: 15px;
+			margin-right: 10px;
+			background-repeat: no-repeat;
+			background-position: center;
+			transition: all $base-duration $base-timing;
+			transform: translateX(0);
+		}
+	}
+	&.prev,
+	&.next {
+		text-decoration: none;
+	}
+	&:hover {
+		// background-color: $btn-text-color;
+		color: $btn-text-color-hover;
+		&:before,
+		&.prev:after {
+			opacity: 1;
+		}
+		&:not(.prev):after {
+			transform: translateX(10px);
+		}
+		&.prev:before {
+			transform: translateX(-10px);
+		}
+	}
+	&:focus {
+		outline: $focus-outline;
+		outline-offset: 3px;
+	}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+}

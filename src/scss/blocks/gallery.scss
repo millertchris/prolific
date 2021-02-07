@@ -1,0 +1,67 @@
+$gallery-desktop-height: 400px;
+$gallery-mobile-height: 200px;
+[data-theme="dark"] {
+	.block.gallery {
+		.is-selected {
+			img {
+				box-shadow: none;
+			}
+		}
+		.dot {
+			background: #fff;
+		}
+	}
+}
+.block.gallery {
+	overflow: hidden;
+	padding: 40px 0;
+	&:hover {
+		.flickity-prev-next-button.previous,
+		.flickity-prev-next-button.next {
+			opacity: 1;
+		}
+		.flickity-prev-next-button.next {
+			right: 10px;
+		}
+		.flickity-prev-next-button.previous {
+			left: 10px;
+		}
+	}
+	.flickity-prev-next-button.previous,
+	.flickity-prev-next-button.next {
+		color: #000;
+		position: absolute;
+		background-color: #fff;
+		box-shadow: 1px 1px 20px #ddd;
+		opacity: 0;
+		transition: all 300ms ease-in-out;
+	}
+	.flickity-prev-next-button.previous {
+		left: -40px;
+	}
+	.flickity-prev-next-button.next {
+		right: -40px;
+	}
+	.is-selected {
+		img {
+			box-shadow: 1px 1px 20px #ddd;
+		}
+	}
+	.carousel {
+		@include clear-list();
+	}
+	.carousel-cell {
+		padding: 20px;
+	}
+	img {
+		display: block;
+		width: auto;
+		max-width: none;
+		height: $gallery-desktop-height;
+		box-shadow: 0 0 0 #ddd;
+		transition: box-shadow 900ms ease-in-out;
+		@media screen and (max-width: 768px) {
+			height: $gallery-mobile-height;
+		}
+	}
+}

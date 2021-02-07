@@ -1,0 +1,41 @@
+{
+  "name": "muh-build-process",
+  "private": true,
+  "description": "Just a tool for the job.",
+  "version": "0.1.0",
+  "license": "0BSD",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "NODE_ENV=development webpack serve --open 'Google Chrome'",
+    "server": "node server.js",
+    "build": "NODE_ENV=production webpack"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "canvas-confetti": "^1.3.3",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "flickity": "^2.2.2",
+    "flickity-imagesloaded": "^2.0.0",
+    "gsap": "^3.6.0",
+    "lodash": "^4.17.20",
+    "mini-css-extract-plugin": "^1.3.3",
+    "node-sass": "^5.0.0",
+    "particles.js": "^2.0.0",
+    "rellax": "^1.12.1",
+    "style-loader": "^2.0.0",
+    "vanilla-tilt": "^1.7.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "prettier": "2.1.2",
+    "sass-loader": "^10.1.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

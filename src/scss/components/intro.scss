@@ -1,0 +1,35 @@
+.component.intro {
+	min-height: 100vh;
+	padding-top: 150px;
+	text-align: center;
+	.col {
+		&:nth-child(1) {
+			margin-bottom: 100px;
+		}
+	}
+	.title {
+		margin-bottom: 20px;
+	}
+}
+
+.iphones {
+	display: flex;
+	padding: 60px 0;
+	margin-top: 100px;
+	img {
+		position: relative;
+		width: 25%;
+		&:nth-child(odd) {
+			top: 60px;
+		}
+	}
+}
+
+#particles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 0;
+}

@@ -1,0 +1,27 @@
+[data-theme="dark"] {
+	footer {
+		a {
+			color: #fff;
+		}
+	}
+}
+
+footer {
+	.row {
+		display: flex;
+		justify-content: center;
+	}
+	ul {
+		@include clear-list();
+	}
+	.nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	a {
+		color: #000;
+		padding: 10px;
+	}
+}

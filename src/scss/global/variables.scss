@@ -1,0 +1,109 @@
+// Paths
+$img-path: "../../static/";
+
+// Type
+$base-font-family: "Poppins", sans-serif;
+$heading-font-family: "Poppins", sans-serif;
+
+// Font Size
+$base-font-size: 18px;
+$desktop-font-size: 18px;
+$tablet-font-size: 18px;
+$mobile-font-size: 18px;
+
+// Line Height
+$base-line-height: 1.84;
+$heading-line-height: 1.4;
+
+// Font Weight
+$base-font-weight: 500;
+$heading-font-weight: 900;
+
+// Other Sizes
+$site-width: 1080px;
+$bottom-margin: 100px;
+$base-border-radius: 0px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+
+// Light Mode
+:root {
+	--primary-color: #000;
+	--secondary-color: #000;
+	--font-color: #000;
+	--bg-color: #fff;
+	--heading-color: #000;
+	--action-color: #000;
+}
+
+// Dark Mode
+[data-theme="dark"] {
+	--primary-color: #fff;
+	--secondary-color: #fff;
+	--font-color: #fff;
+	--bg-color: #0b0b0b;
+	--heading-color: #fff;
+	--action-color: #bcff00;
+}
+
+// Colors
+$primary: #000;
+$secondary: #303030;
+$tertiary: #424242;
+$links: $primary;
+$hover: $secondary;
+
+$dark-gray: #333;
+$medium-gray: #515151;
+$light-gray: #767676;
+
+$black: #000000;
+$white: #ffffff;
+
+// Font Colors
+$base-font-color: #000;
+$action-color: $primary;
+$error-color: "red";
+
+$base-font-color: $black;
+$color-selection: $light-gray;
+
+// Buttons
+$btn-bg-color: transparent;
+$btn-text-color: $black;
+$btn-text-color-hover: $white;
+$btn-border-radius: 0;
+
+// Border
+$base-border-color: $black;
+$base-border: 3px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Focus
+$focus-outline-color: $black;
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 10px;
+
+// Transitions
+$base-duration: 300ms;
+$base-timing: ease-in-out;
+
+// Buttons
+$all-buttons: ".btn, button, [type='button'], [type='reset'], [type='submit']";
+$all-buttons-active: ".btn, button:active, [type='button']:active, [type='reset']:active, [type='submit']:active";
+$all-buttons-focus: ".btn, button:focus, [type='button']:focus, [type='reset']:focus, [type='submit']:focus";
+$all-buttons-hover: ".btn, button:hover, [type='button']:hover, [type='reset']:hover, [type='submit']:hover";
+$all-text-inputs: ".btn, [type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea";
+$all-text-inputs-active: ".btn, [type='color']:active, [type='date']:active, [type='datetime']:active, [type='datetime-local']:active, [type='email']:active, [type='month']:active, [type='number']:active, [type='password']:active, [type='search']:active, [type='tel']:active, [type='text']:active, [type='time']:active, [type='url']:active, [type='week']:active, input:not([type]):active, textarea:active";
+$all-text-inputs-focus: ".btn, [type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus";
+$all-text-inputs-hover: ".btn, [type='color']:hover, [type='date']:hover, [type='datetime']:hover, [type='datetime-local']:hover, [type='email']:hover, [type='month']:hover, [type='number']:hover, [type='password']:hover, [type='search']:hover, [type='tel']:hover, [type='text']:hover, [type='time']:hover, [type='url']:hover, [type='week']:hover, input:not([type]):hover, textarea:hover";
+$all-text-inputs-invalid: ".btn, [type='color']:invalid, [type='date']:invalid, [type='datetime']:invalid, [type='datetime-local']:invalid, [type='email']:invalid, [type='month']:invalid, [type='number']:invalid, [type='password']:invalid, [type='search']:invalid, [type='tel']:invalid, [type='text']:invalid, [type='time']:invalid, [type='url']:invalid, [type='week']:invalid, input:not([type]):invalid, textarea:invalid";
+
+$_form-background-color: #fff;
+$_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$_form-box-shadow-focus: $_form-box-shadow,
+	0 0 5px rgba($base-border-color, 0.7);
+$input-padding: 0.65em 0.8em 0.6em;

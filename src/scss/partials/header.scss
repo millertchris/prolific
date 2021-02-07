@@ -1,0 +1,207 @@
+.skip-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #000;
+	background: #fff;
+	opacity: 0;
+	z-index: -1;
+	&:focus {
+		opacity: 1;
+		z-index: 9999;
+	}
+}
+
+[data-theme="dark"] {
+	header {
+		&.bg {
+			background: rgba(53, 53, 53, 0.5);
+		}
+		a,
+		i {
+			color: #fff;
+		}
+		i {
+			transform: rotate(0deg);
+		}
+	}
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(255, 255, 255, 0);
+	backdrop-filter: blur(10px);
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+	-webkit-backface-visibility: hidden;
+	transition: all 300ms ease-in-out;
+	&.hide {
+		// Using the transform in Chrome Version 88.0.4324.96 (Official Build) (x86_64) was causing nasty motions after switching between dark mode and light mode. Using top for now.
+		top: -100px;
+		// transform: translate3d(0, -100px, 0);
+	}
+	&.bg {
+		background: rgba(255, 255, 255, 0.5);
+	}
+	.wrapper {
+		max-width: none;
+	}
+	.logo {
+		position: relative;
+		font-size: 1.5em;
+		font-weight: 700;
+		z-index: 10;
+	}
+	.row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 20px;
+		@media screen and (max-width: 680px) {
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+	.col {
+		display: flex;
+	}
+	nav {
+		@media screen and (max-width: 480px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 100%;
+			height: 100vh;
+			background: $light-gray;
+		}
+	}
+	ul {
+		@include clear-list();
+		display: flex;
+		flex-wrap: wrap;
+		@media screen and (max-width: 480px) {
+			display: block;
+		}
+	}
+	li {
+		margin-left: 20px;
+		line-height: 1;
+		@media screen and (max-width: 480px) {
+			margin-left: 0;
+			text-align: center;
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+		a {
+			position: relative;
+			display: block;
+			font-weight: 200;
+			padding: 10px;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 4px;
+				width: 0;
+				height: 2px;
+				margin-top: 6px;
+				background: #000;
+				transition: 300ms all ease-in-out;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				font-size: 2em;
+				font-weight: 700;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	i {
+		font-size: 1em;
+		transform: rotate(540deg);
+		color: #000;
+		cursor: pointer;
+		transition: 300ms all ease-in-out;
+	}
+	.theme-switch-wrapper {
+		margin-left: 20px;
+		label {
+			margin-bottom: 0;
+		}
+	}
+}
+
+#load-screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: #fff;
+	z-index: 9999;
+	opacity: 1;
+	transition: opacity 300ms ease-in-out;
+	&.hide {
+		@include visually-hidden();
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+.spinner-box {
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+}
+
+.circle-border {
+	width: 150px;
+	height: 150px;
+	padding: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: rgb(59, 59, 59);
+	background: linear-gradient(
+		0deg,
+		rgba(63, 249, 220, 0.1) 33%,
+		rgb(153, 153, 153) 100%
+	);
+	animation: spin 0.8s linear 0s infinite;
+}
+
+.circle-core {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 50%;
+}
